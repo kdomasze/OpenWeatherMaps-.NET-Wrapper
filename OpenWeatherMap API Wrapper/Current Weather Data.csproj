@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\City List From Json\City List From Json.csproj" />
     <ProjectReference Include="..\Json From Web\Json From Web.csproj" />
   </ItemGroup>
 

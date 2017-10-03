@@ -22,7 +22,7 @@ namespace Current_Weather_Data_Test
                 new Weather(300, "Drizzle", "light intensity drizzle", "09d")
             };
             expected.Base = "stations";
-            expected.Main = new Main(280.32f, 1012, 81, 279.15f, 281.15f);
+            expected.Main = new Main(280.32f, 1012, 81, 279.15f, 281.15f, 0, 0);
             expected.Visibility = 10000;
             expected.Wind = new Wind(4.1f, 80);
             expected.Clouds = new Clouds(90);
