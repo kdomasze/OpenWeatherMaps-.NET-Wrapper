@@ -1,4 +1,4 @@
-# OpenWeatherMaps-.NET-Wrapper
+# OpenWeatherMaps .NET Wrapper
 
 A .NET wrapper for [OpenWetherMaps](https://openweathermap.org/).
 
