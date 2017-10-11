@@ -4,9 +4,6 @@ using System.Text;
 
 namespace OpenWeatherMap_API_Wrapper.Current_Weather_Data
 {
-    /// <summary>
-    /// Wrapper class that contains all results from OpenWeatherMap current weather query
-    /// </summary>
     public class CurrentWeatherData
     {
         /// <summary>
