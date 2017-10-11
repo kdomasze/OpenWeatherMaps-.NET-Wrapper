@@ -51,13 +51,8 @@ namespace Json_From_Web
                 httpClient.BaseAddress = new Uri(url);
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage response = httpClient.GetAsync(url).Result;
-
-                if (response.IsSuccessStatusCode)
-                {
-                    return response.Content.ReadAsStringAsync().Result;
-                }
-
-                return null;
+                
+                return response.Content.ReadAsStringAsync().Result;
             }
         }
     

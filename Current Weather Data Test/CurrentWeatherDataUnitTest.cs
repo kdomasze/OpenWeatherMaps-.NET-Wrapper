@@ -42,7 +42,18 @@ namespace Current_Weather_Data_Test
             var currentWeather = new CurrentWeather("London", "GB", GetApiKey());
             var actual = currentWeather.Data;
 
-            Assert.AreNotEqual(401, actual.Cod);
+            Assert.IsTrue(currentWeather.IsValid());
+            Assert.AreNotEqual(400, actual.Cod);
+        }
+
+        [TestMethod]
+        public void GetDataByInvalidCityNameTest()
+        {
+            var currentWeather = new CurrentWeather("BADNAME", "GB", GetApiKey());
+            var actual = currentWeather.Data;
+
+            Assert.IsTrue(!currentWeather.IsValid());
+            Assert.AreEqual(400, actual.Cod);
         }
 
         [TestMethod]
@@ -51,7 +62,18 @@ namespace Current_Weather_Data_Test
             var currentWeather = new CurrentWeather(2643743, GetApiKey());
             var actual = currentWeather.Data;
 
-            Assert.AreNotEqual(401, actual.Cod);
+            Assert.IsTrue(currentWeather.IsValid());
+            Assert.AreNotEqual(400, actual.Cod);
+        }
+
+        [TestMethod]
+        public void GetDataByInvalidCityIdTest()
+        {
+            var currentWeather = new CurrentWeather(-1, GetApiKey());
+            var actual = currentWeather.Data;
+
+            Assert.IsTrue(!currentWeather.IsValid());
+            Assert.AreEqual(400, actual.Cod);
         }
 
         [TestMethod]
@@ -60,7 +82,18 @@ namespace Current_Weather_Data_Test
             var currentWeather = new CurrentWeather(-0.12574, 51.50853, GetApiKey());
             var actual = currentWeather.Data;
 
-            Assert.AreNotEqual(401, actual.Cod);
+            Assert.IsTrue(currentWeather.IsValid());
+            Assert.AreNotEqual(400, actual.Cod);
+        }
+
+        [TestMethod]
+        public void GetDataByInvalidGeoraphicCoordsTest()
+        {
+            var currentWeather = new CurrentWeather(100.0, 100.0, GetApiKey());
+            var actual = currentWeather.Data;
+
+            Assert.IsTrue(!currentWeather.IsValid());
+            Assert.AreEqual(400, actual.Cod);
         }
 
         public void GetDataByCityZipCodeTest()
@@ -68,7 +101,18 @@ namespace Current_Weather_Data_Test
             var currentWeather = new CurrentWeather(new CurrentWeather.Local("EC2M", "GB"), GetApiKey());
             var actual = currentWeather.Data;
 
-            Assert.AreNotEqual(401, actual.Cod);
+            Assert.IsTrue(currentWeather.IsValid());
+            Assert.AreNotEqual(404, actual.Cod);
+        }
+
+        [TestMethod]
+        public void GetDataByInvalidCityZipCodeTest()
+        {
+            var currentWeather = new CurrentWeather(new CurrentWeather.Local("FAKE", "GB"), GetApiKey());
+            var actual = currentWeather.Data;
+
+            Assert.IsTrue(!currentWeather.IsValid());
+            Assert.AreEqual(404, actual.Cod);
         }
 
         private string GetApiKey()

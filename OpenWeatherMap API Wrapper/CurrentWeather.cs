@@ -17,11 +17,8 @@ namespace OpenWeatherMap_API_Wrapper.Current_Weather_Data
         public CurrentWeather(string cityName, string countryCode, string apiKey)
         {
             int id = CityList.GetCityId(cityName, countryCode);
-
-            if (id != -1)
-            {
-                GetCurrentWeatherById(id, apiKey);
-            }
+            
+            GetCurrentWeatherById(id, apiKey);
         }
 
         public CurrentWeather(int id, string apiKey)
@@ -44,6 +41,11 @@ namespace OpenWeatherMap_API_Wrapper.Current_Weather_Data
             var json = JsonHost.GetJson(url);
 
             _data = JsonConvert.DeserializeObject<CurrentWeatherData>(json);
+        }
+
+        public bool IsValid()
+        {
+            return _data.Cod == 200;
         }
 
         private void GetCurrentWeatherById(int id, string apiKey)
