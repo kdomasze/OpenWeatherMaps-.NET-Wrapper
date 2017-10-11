@@ -20,7 +20,7 @@ Pull the project and open the solution in Visual Studio. It should be ready for 
 
 ### Instructions for Testing
 
-The only requirement before testing is to copy `APIKey.default.txt` to `APIKey.txt` and enter your private API key from [OpenWeatherMaps](https://openweathermap.org/api) in as the first and only line. Once completed, all tests should run properly.
+The only requirement before testing is to copy `APIKey.default.txt` to `APIKey.txt` (located in the 'Current Weather Data Test' project) and enter your private API key from [OpenWeatherMaps](https://openweathermap.org/api) in as the first and only line. Once completed, all tests should run properly.
 
 ## Authors
 
