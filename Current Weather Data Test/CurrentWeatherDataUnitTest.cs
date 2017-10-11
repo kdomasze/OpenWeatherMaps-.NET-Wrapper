@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using DeepEqual.Syntax;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenWeatherMap_API_Wrapper.Current_Weather_Data;
@@ -13,7 +14,7 @@ namespace Current_Weather_Data_Test
         public void SampleDataFromApiTest()
         {
             var currentWeather = new CurrentWeather("http://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b1b15e88fa797225412429c1c50c122a1");
-            var actual = currentWeather.WeatherData;
+            var actual = currentWeather.Data;
 
             var expected = new CurrentWeatherData();
             expected.Coord = new Coordinates(-0.13, 51.51);
@@ -33,6 +34,47 @@ namespace Current_Weather_Data_Test
             expected.Cod = 200;
 
             actual.ShouldDeepEqual(expected);
+        }
+
+        [TestMethod]
+        public void GetDataByCityNameTest()
+        {
+            var currentWeather = new CurrentWeather("London", "GB", GetApiKey());
+            var actual = currentWeather.Data;
+
+            Assert.AreNotEqual(401, actual.Cod);
+        }
+
+        [TestMethod]
+        public void GetDataByCityIdTest()
+        {
+            var currentWeather = new CurrentWeather(2643743, GetApiKey());
+            var actual = currentWeather.Data;
+
+            Assert.AreNotEqual(401, actual.Cod);
+        }
+
+        [TestMethod]
+        public void GetDataByCityGeoraphicCoordsTest()
+        {
+            var currentWeather = new CurrentWeather(-0.12574, 51.50853, GetApiKey());
+            var actual = currentWeather.Data;
+
+            Assert.AreNotEqual(401, actual.Cod);
+        }
+
+        public void GetDataByCityZipCodeTest()
+        {
+            var currentWeather = new CurrentWeather(new CurrentWeather.Local("EC2M", "GB"), GetApiKey());
+            var actual = currentWeather.Data;
+
+            Assert.AreNotEqual(401, actual.Cod);
+        }
+
+        private string GetApiKey()
+        {
+            string key = File.ReadAllText("APIKey.txt");
+            return key;
         }
     }
 }

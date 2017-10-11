@@ -10,7 +10,10 @@ namespace City_List_From_Json
 
         public static int GetCityId(string cityName, string countryCode)
         {
-            ParseCityList();
+            if (_cityEntries == null)
+            {
+                ParseCityList();
+            }
 
             foreach (var cityEntry in _cityEntries)
             {
