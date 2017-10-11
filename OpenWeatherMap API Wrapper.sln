@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Current Weather Data", "OpenWeatherMap API Wrapper\Current Weather Data.csproj", "{3CAC43A6-5DE2-4F5C-B978-2A26BC008B92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrentWeatherData", "OpenWeatherMap API Wrapper\CurrentWeatherData.csproj", "{3CAC43A6-5DE2-4F5C-B978-2A26BC008B92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Current Weather Data Unit Test", "Current Weather Data Test\Current Weather Data Unit Test.csproj", "{AC64E22C-ADF1-4154-B3A0-7D1C12A4C55E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrentWeatherData.UnitTest", "Current Weather Data Test\CurrentWeatherData.UnitTest.csproj", "{AC64E22C-ADF1-4154-B3A0-7D1C12A4C55E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json From Web", "Json From Web\Json From Web.csproj", "{23D882FD-5906-425C-88CA-C26391790CB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonFromWeb", "Json From Web\JsonFromWeb.csproj", "{23D882FD-5906-425C-88CA-C26391790CB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json From Web Unit Test", "Json From Web Test\Json From Web Unit Test.csproj", "{6FE7CBC0-7E2E-4BEC-87A0-D33C1A56016B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonFromWeb.UnitTest", "Json From Web Test\JsonFromWeb.UnitTest.csproj", "{6FE7CBC0-7E2E-4BEC-87A0-D33C1A56016B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "City List From Json", "City List From Json\City List From Json.csproj", "{B89343F1-135B-44BA-8E7B-2202B985DEB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityListFromJson", "City List From Json\CityListFromJson.csproj", "{B89343F1-135B-44BA-8E7B-2202B985DEB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "City List From Json Unit Test", "City List From Json Unit Test\City List From Json Unit Test.csproj", "{9FC55D55-B17B-4CC2-8B78-9DA1E3B821AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityListFromJson.UnitTest", "City List From Json Unit Test\CityListFromJson.UnitTest.csproj", "{9FC55D55-B17B-4CC2-8B78-9DA1E3B821AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

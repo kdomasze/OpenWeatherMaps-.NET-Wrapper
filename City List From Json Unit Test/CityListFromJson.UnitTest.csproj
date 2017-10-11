@@ -64,9 +64,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\City List From Json\City List From Json.csproj">
+    <ProjectReference Include="..\City List From Json\CityListFromJson.csproj">
       <Project>{b89343f1-135b-44ba-8e7b-2202b985deb6}</Project>
-      <Name>City List From Json</Name>
+      <Name>CityListFromJson</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

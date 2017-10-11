@@ -70,9 +70,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Json From Web\Json From Web.csproj">
+    <ProjectReference Include="..\Json From Web\JsonFromWeb.csproj">
       <Project>{23d882fd-5906-425c-88ca-c26391790cb9}</Project>
-      <Name>Json From Web</Name>
+      <Name>JsonFromWeb</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
